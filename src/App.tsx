@@ -5,7 +5,7 @@ import { useRef, useState } from 'react';
 
 const App: React.FC = () => {
   const [name, setName] = useState('Klaus');
-  const ref = useRef(null);
+  const ref = useRef<HTMLInputElement>(null);
   return (
     <div>
       <label>
@@ -19,9 +19,7 @@ const App: React.FC = () => {
       <label>
         Nachname:
         <input type="text" ref={ref} />
-        <button onClick={() => (ref.current as unknown as any).value}>
-          ok
-        </button>
+        <button onClick={() => console.log(ref.current!.value)}>ok</button>
       </label>
     </div>
 
