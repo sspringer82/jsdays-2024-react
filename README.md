@@ -18,6 +18,13 @@ https://github.com/sspringer82/jsdays-2024-react
 - https://eslint.org/
 - https://reactnative.dev/
 - https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
+- https://react-hook-form.com/
+- https://mui.com/material-ui/
+- https://testing-library.com/docs/react-testing-library/intro
+- https://vitest.dev/
+- https://jestjs.io/
+- https://www.i18next.com/
+- https://tanstack.com/query/latest
 
 ## Backend
 Repo: https://github.com/sspringer82/jsdays-2024-react
