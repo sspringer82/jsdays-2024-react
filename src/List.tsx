@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Book } from './Book';
+import { useEffect, useState } from 'react';
 import { deleteBook, getAllBooks } from './books.api';
 import ListItem from './ListItem';
+import { useBooksContext } from './BooksProvider';
 
 function List() {
-  const [books, setBooks] = useState<Book[]>([]);
+  // const [books, setBooks] = useState<Book[]>([]);
+  const [books, setBooks] = useBooksContext();
   const [error, setError] = useState(false);
 
   useEffect(() => {
