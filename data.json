@@ -1,7 +1,7 @@
 {
   "books": [
     {
-      "id": 1,
+      "id": "1",
       "author": "Miguel de Cervantes",
       "title": "Don Quijote",
       "isbn": "978-3-123456-47-8",
@@ -9,7 +9,7 @@
       "price": "15,00 €"
     },
     {
-      "id": 2,
+      "id": "2",
       "author": "Leo Tolstoi",
       "title": "Krieg und Frieden",
       "isbn": "978-3-123456-48-5",
@@ -17,15 +17,7 @@
       "price": "20,00 €"
     },
     {
-      "id": 3,
-      "author": "Jane Austen",
-      "title": "Stolz und Vorurteil",
-      "isbn": "978-3-123456-49-2",
-      "pages": 432,
-      "price": "10,00 €"
-    },
-    {
-      "id": 4,
+      "id": "4",
       "author": "F. Scott Fitzgerald",
       "title": "Der große Gatsby",
       "isbn": "978-3-123456-50-8",
@@ -33,7 +25,7 @@
       "price": "8,00 €"
     },
     {
-      "id": 5,
+      "id": "5",
       "author": "George Orwell",
       "title": "1984",
       "isbn": "978-3-123456-51-5",
@@ -41,7 +33,7 @@
       "price": "12,00 €"
     },
     {
-      "id": 6,
+      "id": "6",
       "author": "J.R.R. Tolkien",
       "title": "Der Herr der Ringe",
       "isbn": "978-3-123456-52-2",
@@ -49,7 +41,7 @@
       "price": "30,00 €"
     },
     {
-      "id": 7,
+      "id": "7",
       "author": "Harper Lee",
       "title": "Wer die Nachtigall stört",
       "isbn": "978-3-123456-53-9",
@@ -57,7 +49,7 @@
       "price": "8,95 €"
     },
     {
-      "id": 8,
+      "id": "8",
       "author": "J.K. Rowling",
       "title": "Harry Potter Serie",
       "isbn": "978-3-123456-54-6",
@@ -65,7 +57,7 @@
       "price": "80,00 € (gesamte Serie)"
     },
     {
-      "id": 9,
+      "id": "9",
       "author": "Anne Frank",
       "title": "Das Tagebuch der Anne Frank",
       "isbn": "978-3-123456-55-3",
@@ -73,7 +65,7 @@
       "price": "10,00 €"
     },
     {
-      "id": 10,
+      "id": "10",
       "author": "Gabriel García Márquez",
       "title": "Hundert Jahre Einsamkeit",
       "isbn": "978-3-123456-56-0",

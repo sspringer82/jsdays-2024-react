@@ -10,3 +10,10 @@ export async function getAllBooks(): Promise<Book[]> {
   const data = await response.json();
   return data;
 }
+
+export async function deleteBook(id: number): Promise<void> {
+  const response = await fetch(`${booksBaseUrl}/${id}`, { method: 'DELETE' });
+  if (!response.ok) {
+    throw new Error('Es ist ein Fehler aufgetreten');
+  }
+}

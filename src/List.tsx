@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Book } from './Book';
-import { getAllBooks } from './books.api';
+import { deleteBook, getAllBooks } from './books.api';
 import ListItem from './ListItem';
 
 function List() {
@@ -13,6 +13,13 @@ function List() {
       .catch(() => setError(true));
   }, []);
 
+  async function handleDelete(id: number) {
+    await deleteBook(id);
+    setBooks((prevBooks) => {
+      return prevBooks.filter((book) => book.id !== id);
+    });
+  }
+
   if (error) {
     return <div>Es ist ein Fehler aufgetreten</div>;
   }
@@ -24,7 +31,7 @@ function List() {
   return (
     <div>
       {books.map((book) => (
-        <ListItem book={book} key={book.id} />
+        <ListItem book={book} key={book.id} onDelete={handleDelete} />
       ))}
     </div>
   );
