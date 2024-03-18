@@ -9,3 +9,12 @@ https://github.com/sspringer82/jsdays-2024-react
 2. cd jsdays-2024-react
 3. npm install
 4. npm run dev
+
+## Links
+- https://react.dev/
+- https://nextjs.org/
+- https://vitejs.dev/
+- https://npmtrends.com/
+- https://eslint.org/
+- https://reactnative.dev/
+- https://docs.pmnd.rs/react-three-fiber/getting-started/introduction

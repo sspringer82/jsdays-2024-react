@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  console.log('RENDER');
+
+  const [names, setNames] = useState(['Klaus', 'Lisa', 'Dieter']);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setNames((prevState) => {
+        return [...prevState, 'Lydia'];
+      });
+    }, 2000);
+    return () => {
+      console.log('Unmount');
+    };
+  }, []);
 
   return (
     <>
+      <h1>Meine Liste</h1>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {names.map((firstName) => (
+          <div key={firstName}>{firstName}</div>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <button
+        onClick={() =>
+          setNames(() => {
+            return [...names, 'peter'];
+          })
+        }
+      >
+        add name
+      </button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
