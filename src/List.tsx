@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { deleteBook, getAllBooks } from './books.api';
 import ListItem from './ListItem';
 import { useBooksContext } from './BooksProvider';
+import { Link } from 'react-router-dom';
 
 function List() {
   // const [books, setBooks] = useState<Book[]>([]);
@@ -27,7 +28,11 @@ function List() {
   }
 
   if (books.length === 0) {
-    return <div>Keine Bücher gefunden</div>;
+    return (
+      <div>
+        Keine Bücher gefunden<Link to="/create">Neu</Link>
+      </div>
+    );
   }
 
   return (
@@ -49,6 +54,7 @@ function List() {
         .map((book) => (
           <ListItem book={book} key={book.id} onDelete={handleDelete} />
         ))}
+      <Link to="/create">Neu</Link>
     </div>
   );
 }

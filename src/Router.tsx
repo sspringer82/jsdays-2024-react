@@ -1,6 +1,7 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 import List from './List';
 import Detail from './Detail';
+import Form from './Form';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: '/list',
     element: <List />,
+  },
+  {
+    path: '/create',
+    element: <Form />,
   },
 ]);
 

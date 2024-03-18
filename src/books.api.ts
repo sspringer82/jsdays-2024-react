@@ -17,3 +17,17 @@ export async function deleteBook(id: string): Promise<void> {
     throw new Error('Es ist ein Fehler aufgetreten');
   }
 }
+
+export async function createBook(book: Omit<Book, 'id'>): Promise<Book> {
+  const response = await fetch('/api/books', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(book),
+  });
+  if (!response.ok) {
+    throw new Error('whoops');
+  }
+  return response.json();
+}
