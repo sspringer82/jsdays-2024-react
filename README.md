@@ -20,6 +20,7 @@ https://github.com/sspringer82/jsdays-2024-react
 - https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
 
 ## Backend
+Repo: https://github.com/sspringer82/jsdays-2024-react
 
 1. `npm install json-server`
 2. data.json aus Repo kopieren

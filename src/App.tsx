@@ -1,40 +1,21 @@
 import { useEffect, useState } from 'react';
+import { Book } from './Book';
+
+const url = 'http://localhost:3001/books/1';
 
 function App() {
-  console.log('RENDER');
-
-  const [names, setNames] = useState(['Klaus', 'Lisa', 'Dieter']);
+  const [book, setBook] = useState<Book | null>(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      setNames((prevState) => {
-        return [...prevState, 'Lydia'];
-      });
-    }, 2000);
-    return () => {
-      console.log('Unmount');
-    };
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setBook(data));
   }, []);
 
-  return (
-    <>
-      <h1>Meine Liste</h1>
-      <div>
-        {names.map((firstName) => (
-          <div key={firstName}>{firstName}</div>
-        ))}
-      </div>
-      <button
-        onClick={() =>
-          setNames(() => {
-            return [...names, 'peter'];
-          })
-        }
-      >
-        add name
-      </button>
-    </>
-  );
+  if (book !== null) {
+    return <div>{book.title}</div>;
+  }
+  return <div>Nix</div>;
 }
 
 export default App;
