@@ -1,5 +1,8 @@
 # React + TypeScript + Vite
 
+## Repo
+https://github.com/sspringer82/jsdays-2024-react
+
 ## Setup
 
 1. npm create vite@latest jsdays-2024-react -- --template react-ts
