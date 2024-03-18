@@ -1,32 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { Book } from './Book';
-import { getAllBooks } from './books.api';
-
-function App() {
-  const [books, setBooks] = useState<Book[]>([]);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    getAllBooks()
-      .then((books) => setBooks(books))
-      .catch(() => setError(true));
-  }, []);
-
-  if (error) {
-    return <div>Es ist ein Fehler aufgetreten</div>;
-  }
-
-  if (books.length === 0) {
-    return <div>Keine Bücher gefunden</div>;
-  }
-
+function Parent() {
+  const children = ['Kind1', 'Kind2', 'Kind3'];
   return (
     <div>
-      {books.map((book) => (
-        <div key={book.id}>{book.title}</div>
-      ))}
+      <h1>Parent</h1>
+      <Child name={children[0]} />
+      <Child name={children[1]} />
+      <Child name={children[2]} />
     </div>
   );
+}
+
+type Props = {
+  name: string;
+};
+
+const Child: React.FC<Props> = ({ name }) => {
+  return <div>Child: {name}</div>;
+};
+
+function App() {
+  return <Parent></Parent>;
 }
 
 export default App;
