@@ -18,3 +18,9 @@ https://github.com/sspringer82/jsdays-2024-react
 - https://eslint.org/
 - https://reactnative.dev/
 - https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
+
+## Backend
+
+1. `npm install json-server`
+2. data.json aus Repo kopieren
+3. `npx json-server -p 3001 -w data.json`
