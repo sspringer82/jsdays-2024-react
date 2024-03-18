@@ -38,7 +38,7 @@ function List() {
   return (
     <div>
       <div>
-        <label>
+        <label style={{ color: 'hotpink' }}>
           Suchen:{' '}
           <input
             type="text"
