@@ -7,6 +7,7 @@ function List() {
   // const [books, setBooks] = useState<Book[]>([]);
   const [books, setBooks] = useBooksContext();
   const [error, setError] = useState(false);
+  const [filter, setFilter] = useState('');
 
   useEffect(() => {
     getAllBooks()
@@ -14,7 +15,7 @@ function List() {
       .catch(() => setError(true));
   }, []);
 
-  async function handleDelete(id: number) {
+  async function handleDelete(id: string) {
     await deleteBook(id);
     setBooks((prevBooks) => {
       return prevBooks.filter((book) => book.id !== id);
@@ -31,9 +32,23 @@ function List() {
 
   return (
     <div>
-      {books.map((book) => (
-        <ListItem book={book} key={book.id} onDelete={handleDelete} />
-      ))}
+      <div>
+        <label>
+          Suchen:{' '}
+          <input
+            type="text"
+            value={filter}
+            onChange={(event) => setFilter(event.target.value)}
+          />
+        </label>
+      </div>
+      {books
+        .filter((book) =>
+          book.title.toLowerCase().includes(filter.toLowerCase())
+        )
+        .map((book) => (
+          <ListItem book={book} key={book.id} onDelete={handleDelete} />
+        ))}
     </div>
   );
 }
