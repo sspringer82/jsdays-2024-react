@@ -1,22 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { Book } from './Book';
+import { getAllBooks } from './books.api';
 
-const url = '/api/books/1';
-
-const App: React.FC = () => {
-  // function App() {
-  const [book, setBook] = useState<Book | null>(null);
+function App() {
+  const [books, setBooks] = useState<Book[]>([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => setBook(data));
+    getAllBooks()
+      .then((books) => setBooks(books))
+      .catch(() => setError(true));
   }, []);
 
-  if (book !== null) {
-    return <div>{book.title}</div>;
+  if (error) {
+    return <div>Es ist ein Fehler aufgetreten</div>;
   }
-  return <div>Nix</div>;
-};
+
+  if (books.length === 0) {
+    return <div>Keine Bücher gefunden</div>;
+  }
+
+  return (
+    <div>
+      {books.map((book) => (
+        <div key={book.id}>{book.title}</div>
+      ))}
+    </div>
+  );
+}
 
 export default App;
